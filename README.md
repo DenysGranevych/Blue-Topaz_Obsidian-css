@@ -6,7 +6,8 @@
  * @Description:
 -->
 
-[![CodeQL Analysis](https://github.com/DenysGranevych/Blue-Topaz_Obsidian-css/actions/workflows/codeql.yml/badge.svg)](https://github.com/DenysGranevych/Blue-Topaz_Obsidian-css/actions/workflows/codeql.yml)
+[![CodeQL Analysis](https://github.com/DenysGranevych/Blue-Topaz_Obsidian-css/actions/workflows/codeql.yml/badge.svg?branch=master)](https://github.com/DenysGranevych/Blue-Topaz_Obsidian-css/actions/workflows/codeql.yml)
+
 
 > Due to obsidian's policy of not being able to use online or local vault images.The option for related built-in online images has been removed, but custom settings are retained. Please set the URL for displaying background images by yourself.
 
