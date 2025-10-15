@@ -2,9 +2,9 @@ name: CodeQL Analysis
 
 on:
   push:
-    branches: [ "main", "dev", "feature/**" ]  # Run CodeQL on every commit to these branches
+    branches: [ "master","feature/**" ]  # Run CodeQL on every commit to these branches
   pull_request:
-    branches: [ "main", "dev" ]                # Run on PR creation or update
+    branches: [ "master", "dev" ]                # Run on PR creation or update
   schedule:
     - cron: '0 3 * * 1'                        # Also run weekly on Monday at 03:00 UTC
 
