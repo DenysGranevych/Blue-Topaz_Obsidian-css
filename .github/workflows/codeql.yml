@@ -2,33 +2,33 @@ name: CodeQL Analysis
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "dev", "feature/**" ]  # Run CodeQL on every commit to these branches
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]                # Run on PR creation or update
   schedule:
-    - cron: '0 3 * * 1' # Run weekly
+    - cron: '0 3 * * 1'                        # Also run weekly on Monday at 03:00 UTC
 
 jobs:
   analyze:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest                     # Use the latest Ubuntu runner
     permissions:
       actions: read
       contents: read
-      security-events: write
+      security-events: write                   # Required for uploading CodeQL results
 
     strategy:
-      fail-fast: false
+      fail-fast: false                         # Continue other jobs even if one fails
       matrix:
-        language: [ 'javascript' ]
+        language: [ 'javascript' ]             # Adjust for your project: e.g. 'javascript', 'typescript', 'csharp'
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4              # Get the code from the repository
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v3     # Initialize CodeQL for the selected language
         with:
           languages: ${{ matrix.language }}
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v3  # Run the actual CodeQL analysis and upload the results
